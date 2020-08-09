@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+.Main {
+  background: #fafafa;
+  padding: 50px 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Main--Form {
+  background: #fff;
+  padding: 20px 25px;
+  width: 100%;
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.14), 0 1px 3px 0 rgba(0,0,0,0.12);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Main--FormRow {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.Main--FormButton {
+  margin-left: 50px;
+  height: 48px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.Main--FormButton button {
+  height: 40px;
+  width: 200px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ProductsList {
+  margin-top: 50px;
+  width: 100%;
+}
+
+h1 {
+  margin-bottom: 35px;
+}
+
+.ProductsItem {
+  display: flex;
+  background: #fff;
+  padding: 0 25px;
+  width: 100%;
+  margin-bottom: 25px;
+  cursor: grabbing;
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.14), 0 1px 3px 0 rgba(0,0,0,0.12);
+}
+
+.ProductsItem--Col {
+  flex: 1;
+}
+
+.ProductsItem--Name {
+  display: flex;
+  align-items: center;
+}
+
+.ProductsItem--Name p {
+  margin: 0;
+}
+
+.ProductsItem--Buttons {
+  display: flex;
+  justify-content: flex-end;
 }
