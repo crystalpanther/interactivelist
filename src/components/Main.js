@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
@@ -14,7 +14,7 @@ import Context from '../context/context';
 import update from 'immutability-helper';
 import Pagination from '@material-ui/lab/Pagination';
 
-const data = require('../data/data.json');
+let data = require('../data/data.json');
 
 export default function Main() {
     const [value, setValue] = useState('');
@@ -28,9 +28,15 @@ export default function Main() {
     const handleClose = () => {
         setOpen(false);
     };
-    localStorage.setItem('productsInCart', JSON.stringify(products));
+    
 
+    useEffect(() => {
+        localStorage.setItem('productsInCart', JSON.stringify(products));
+        
+    }, [products])
 
+    data =  JSON.parse(localStorage.getItem('productsInCart',products));
+    console.log(data)
     const submitHandler = (event) => {
         event.preventDefault()
         if (value) {

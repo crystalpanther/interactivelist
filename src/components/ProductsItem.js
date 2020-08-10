@@ -122,27 +122,3 @@ export default DropTarget(
         }),
     )(Card),
 )
-
-// export default function ProductsItem(product) {
-//     const {deleteProduct, handleClickOpen} = useContext(Context);
-//     const classes = useStyles();
-//
-//     return (
-//         <Grid item xs={12}>
-//             <div className={"ProductsItem"} draggable>
-//                 <div className={"ProductsItem--Col ProductsItem--Name"}>
-//                     <p>{product.productName}</p>
-//                 </div>
-//                 <div className={"ProductsItem--Col ProductsItem--Buttons"}>
-//                     <IconButton aria-label="delete" className={classes.margin}
-//                                 onClick={handleClickOpen.bind(null, product.productName, product.productId)}>
-//                         <CreateIcon />
-//                     </IconButton>
-//                     <IconButton aria-label="delete" className={classes.margin} onClick={deleteProduct.bind(null, product.productId)}>
-//                         <DeleteIcon />
-//                     </IconButton>
-//                 </div>
-//             </div>
-//         </Grid>
-//     )
-// }
