@@ -24,19 +24,21 @@ export default function Main() {
     const [products, setProducts] = useState(data);
     const [currentPage, setCurrentPage] = useState(1);
     const productsPerPage = 5;
+   
+
+    data = data === products ?  JSON.parse(localStorage.getItem('productsInCart', products)) : products;
+    if (localStorage.length === 0) {
+        data = products;
+    }
 
     const handleClose = () => {
         setOpen(false);
-    };
-    
+    }
 
     useEffect(() => {
         localStorage.setItem('productsInCart', JSON.stringify(products));
-        
     }, [products])
 
-    data =  JSON.parse(localStorage.getItem('productsInCart',products));
-    console.log(data)
     const submitHandler = (event) => {
         event.preventDefault()
         if (value) {
@@ -98,7 +100,6 @@ export default function Main() {
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
-
     return (
         <Context.Provider value={{deleteProduct, editProduct, handleClickOpen, moveCard}}>
             <div className={"Main"}>
